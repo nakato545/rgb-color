@@ -1,0 +1,56 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>RGB切替表示</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: black;
+    }
+
+    .buttons {
+      position: absolute;
+      top: 20px;
+      display: flex;
+      gap: 10px;
+    }
+
+    button {
+      font-size: 20px;
+      padding: 10px 20px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="buttons">
+    <button onclick="setColor('red')">赤</button>
+    <button onclick="setColor('green')">緑</button>
+    <button onclick="setColor('blue')">青</button>
+  </div>
+
+  <script>
+    function setColor(color) {
+      let rgb;
+      switch (color) {
+        case 'red':
+          rgb = 'rgb(255, 0, 0)';
+          break;
+        case 'green':
+          rgb = 'rgb(0, 255, 0)';
+          break;
+        case 'blue':
+          rgb = 'rgb(0, 0, 255)';
+          break;
+      }
+      document.body.style.backgroundColor = rgb;
+    }
+  </script>
+</body>
+</html>
